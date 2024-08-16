@@ -1,0 +1,193 @@
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Contact Us</title>
+    <style>
+      /* CSS styles for the contact page */
+*{
+    font-family: 'Roboto', sans-serif;
+    margin:0; padding:0;
+    box-sizing: border-box;
+    outline: none; border:none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: .2s linear;
+}
+
+body {
+	font-family: Arial, sans-serif;
+	background-color: #ebc495;
+	margin: 0;
+	padding: 0;
+}
+
+
+
+nav ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+nav ul li {
+	display: inline-block;
+	margin-right: 20px;
+}
+
+nav ul li:last-child {
+	margin-right: 0;
+}
+
+nav ul li a {
+	color: #fff;
+	text-decoration: none;
+	font-size: 18px;
+}
+
+nav ul li a:hover {
+	color: #ffcc00;
+}
+
+#about {
+	margin-top: 50px;
+}
+
+
+
+header {
+	background-color: #333;
+	color: #fff;
+	padding: 20px;
+}
+
+      
+      h1 {
+        margin: 0;
+        font-size: 36px;
+        color: #8a1f11;
+        text-shadow: 2px 2px 2px #e7dfc6;
+        background-color: #e7dfc6;
+        padding: 10px;
+        text-align: center;
+      }
+
+h2 {
+	font-size: 28px;
+	margin-bottom: 20px;
+}
+
+      
+      main {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+      
+      section {
+        margin-bottom: 20px;
+      }
+      
+      label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+      
+      input[type="text"], textarea {
+        width: 100%;
+        padding: 5px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+      }
+      
+footer{
+
+position: left;
+  bottom: 0;
+
+}
+
+      input[type="submit"] {
+        background-color: #8a1f11;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        cursor: pointer;
+        font-size: 18px;
+      }
+      
+      input[type="submit"]:hover {
+        background-color: #b02c23;
+      }
+      
+      /* Responsive styles */
+      @media screen and (max-width: 600px) {
+        h1 {
+          font-size: 24px;
+        }
+        
+        input[type="submit"] {
+          font-size: 16px;
+        }
+      }
+    </style>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="{% url 'webHomeBase' %}">Home</a></li>
+          <li><a href="{% url 'webhome' %}">Buying</a></li>
+          <li><a href="{%url 'webContactBase' %}">Contact Us</a></li>
+          <li><a href="{%url 'webBookingBase' %}">Book a course</a></li>
+          <li><a href="{%url 'webAboutUsBase'%}">About Us</a></li>   
+             
+                         
+        </ul>
+      </nav>
+    </header> 
+
+   
+
+
+
+    
+      <h1>Связаться с нами</h1>
+   
+
+    <main>
+      <section>
+        <h2>Часы работы</h2>
+        <p>Мы открыты каждый день с 10:00 до 21:00.</p>
+      </section>
+      <section>
+        <h2>Адрес</h2>
+        <p>Семирамис ИнтерКонтиненталь, Корниш,<br>Эль-Нил, мухафаза Каир, 11511, Египет</p>
+      </section>
+      <section>
+        <h2>Телефон</h2>
+        <p>Позвоните нам по телефону (20) 2 37241021</p>
+      </section>
+      <section>
+        <h2>Контакты &amp; Запрос</h2>
+        <form>
+          <label for="name">Имя:</label>
+          <input type="text" id="name" name="name" required>
+          <label for="email">Электронная почта:</label>
+          <input type="text" id="email" name="email" required>
+          <label for="message">Сообщение:</label>
+          <textarea id="message" name="message" required></textarea>
+          <input type="submit" value="Отправить">
+        </form>
+      </section>
+    </main>
+
+<footer>
+		<p>&copy; 2023 Наш магазин. Все права защищены.</p>
+	</footer>
+
+
+  </body>
+</html>

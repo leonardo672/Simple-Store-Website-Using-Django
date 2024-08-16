@@ -1,0 +1,558 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Book Table</title>
+	<style>
+*{
+    font-family: 'Roboto', sans-serif;
+    margin:0; padding:0;
+    box-sizing: border-box;
+    outline: none; border:none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: .2s linear;
+}
+
+body {
+	font-family: Arial, sans-serif;
+	background-color: #ebc495;
+	margin: 0;
+	padding: 0;
+}
+
+
+		.container {
+			max-width: 800px;
+			margin: 0 auto;
+			padding: 30px;
+			background-color: #FAD7A0  ;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		}
+		h1 {
+			margin-top: 0;
+			font-size: 28px;
+			text-align: center;
+			color: #f44336;
+		}
+		form {
+			margin-top: 30px;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			align-items: center;
+		}
+		label {
+			display: block;
+			margin-bottom: 10px;
+			font-size: 18px;
+			font-weight: bold;
+			color: #333;
+		}
+		input, select {
+			display: block;
+			width: 100%;
+			padding: 10px;
+			font-size: 16px;
+			border: 1px solid #ddd;
+			border-radius: 5px;
+			background-color: #f9f9f9;
+			color: #333;
+			box-sizing: border-box;
+			margin-bottom: 20px;
+		}
+		input[type="submit"] {
+			background-color: #4CAF50;
+			color: #fff;
+			border: none;
+			cursor: pointer;
+			font-size: 18px;
+			font-weight: bold;
+			padding: 10px 20px;
+			border-radius: 5px;
+			transition: all 0.2s ease-in-out;
+		}
+		input[type="submit"]:hover {
+			background-color: #fff;
+			color: #4CAF50;
+			border: 1px solid #4CAF50;
+		}
+		.success {
+			color: #4CAF50;
+			font-weight: bold;
+			margin-top: 10px;
+		}
+		.error {
+			color: #f44336;
+			font-weight: bold;
+			margin-top: 10px;
+		}
+		/* Changes start here */
+		/* Update colors as per your preference */
+		input:focus, select:focus {
+			outline: none;
+			border-color: #f44336;
+		}
+		input[type="submit"] {
+			background-color: #f44336;
+			color: #fff;
+			border: none;
+			cursor: pointer;
+			font-size: 18px;
+			font-weight: bold;
+			padding: 10px 20px;
+			border-radius: 5px;
+			transition: all 0.2s ease-in-out;
+		}
+		input[type="submit"]:hover {
+			background-color: #4CAF50;
+			color: #fff;
+			border: 1px solid #4CAF50;
+		}
+		label {
+			color: #f44336;
+		}
+
+h2 {
+	font-size: 28px;
+	margin-bottom: 20px;
+}
+
+p {
+	font-size: 18px;
+	line-height: 1.5;
+	margin-bottom: 20px;
+}
+footer{
+
+position: left;
+  bottom: 0;
+
+}
+h1 {
+	margin: 0;
+	font-size: 36px;
+}
+
+nav ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+nav ul li {
+	display: inline-block;
+	margin-right: 20px;
+}
+
+nav ul li:last-child {
+	margin-right: 0;
+}
+
+nav ul li a {
+	color: #fff;
+	text-decoration: none;
+	font-size: 18px;
+}
+
+nav ul li a:hover {
+	color: #ffcc00;
+}
+
+main {
+	max-width: 1000px;
+	margin: 0 auto;
+	padding: 20px;
+}
+
+#about {
+	margin-top: 50px;
+}
+h2 {
+	font-size: 28px;
+	margin-bottom: 20px;
+        text-align: center;
+}
+header {
+	background-color: #333;
+	color: #fff;
+	padding: 20px;
+}
+
+h1 {
+	margin: 0;
+	font-size: 36px;
+}
+
+nav ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+nav ul li {
+	display: inline-block;
+	margin-right: 20px;
+}
+
+nav ul li:last-child {
+	margin-right: 0;
+}
+
+nav ul li a {
+	color: #fff;
+	text-decoration: none;
+	font-size: 18px;
+}
+
+nav ul li a:hover {
+	color: #ffcc00;
+}
+
+textarea {
+	width: 100%;
+	padding: 15px;
+	border-radius: 5px;
+	border: 1px solid #ccc;
+	font-size: 18px;
+	margin-bottom: 20px;
+}
+
+
+
+.schedule {
+  width: 70%;
+  border-collapse: collapse;
+  margin: 0 auto;
+  margin-bottom: 15px;
+  padding: 15px;
+  padding-bottom: 15px;
+}
+
+.schedule th,
+.schedule td {
+  border: 1px solid #d49520;
+  padding: 15px;;
+  border-radius: 10px; 
+  width: 70;
+  background-color: #e5ba5e;
+}
+
+.schedule th {
+  background-color: #f07d11;
+  font-weight: bold;
+  text-align: center;
+  
+}
+
+.schedule td:first-child {
+  font-weight: bold;
+  
+}
+
+.schedule tbody tr:nth-child(odd) {
+  background-color: #f5f5f5;
+ 
+}
+
+.Holiday
+{
+	font-style: italic;
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+	</style>
+    <header>
+		<nav>
+		  <ul>
+			<li><a href="{% url 'webHomeBase' %}">Home</a></li>
+			<li><a href="{% url 'webhome' %}">Buying</a></li>
+			<li><a href="{%url 'webContactBase' %}">Contact Us</a></li>
+			<li><a href="{%url 'webBookingBase' %}">Book a course</a></li>
+			<li><a href="{%url 'webAboutUsBase'%}">About Us</a></li>     
+		  
+						   
+		  </ul>
+		</nav>
+	  </header> 
+
+<main>
+		<section id="about">
+			<h2>Бронирование курса</h2>
+			<p>Бронирование курса обычно включает резервирование места или регистрацию в нашей специальной образовательной программе или обучении, которые предназначены для того, чтобы помочь людям приобрести новые знания или навыки в определенной предметной области микроэлектроники.</p>
+			<p>Курсы могут принимать различные формы, начиная от очного обучения в классе и заканчивая онлайн-курсами или виртуальными курсами, которые можно пройти удаленно. Курсы могут охватывать широкий круг тем, включая академические предметы, такие как математика, физика, программирование, электротехника, изучение электрона и многое другое, а также профессиональные навыки, такие как программирование, управление проектами или лидерство.</p>
+			<p>Запись на курс может стать отличным способом расширить свои знания и навыки, если вы хотите продвинуться по карьерной лестнице, заняться новым хобби или просто учиться для личного обогащения.</p>
+			<p>У нас есть особая функция — бронирование курса уникальным способом. Вы можете указать свое имя, адрес электронной почты, время и данные, которые вы хотите начать курс, а также количество людей, которые могут участвовать с вами в том же курсе, и мы поспешим связаться с вами после этого.</p>
+                        <img src="{%  static 'Dishes/images/Businessman hand using mobile phone with digital layer effect as business strategy concept.png' %}" alt="Restaurant Booking">
+			
+                        
+			
+		</section>
+	</main>
+
+	<style>
+    
+.Dif{
+  color: #000;
+  background-color: #f07d11;
+  font-weight: bold;
+  text-align: center;
+}
+
+.DifK-K{
+  color: #000;
+  font-weight: bold;
+  text-align: center;
+  background-color: #c39163;
+}
+    </style>
+
+	
+	<main>
+       <h1 class="Dif">Курс по основам программирования</h1>
+       <p class="DifK-K">Этот курс предназначен для начинающих, которые хотят изучить основы программирования. Курс охватывает 10 популярных языков программирования: C++, Python, Java, JavaScript, Kotlin, PHP, C#, Swift, R и Ruby.</p>
+	   <p class="DifK-K">Каждый язык рассматривается подробно, начиная с введения в синтаксис и основных концепций программирования. Вы научитесь писать простые программы и работать с переменными, типами данных и управляющими структурами. По мере прохождения курса вы изучите более продвинутые концепции программирования, такие как объектно-ориентированное программирование, функциональное программирование и веб-разработка.</p>
+	   <h1 class="Dif">Беглый взгляд на курс </h1>
+	   <p class="DifK-K">Курс разделен на 10 модулей, по одному для каждого языка программирования, изучаемого в курсе. Каждый модуль состоит из:
+
+		Видеолекции: смотрите обучающие видеоролики, в которых объясняются ключевые понятия и синтаксис каждого языка программирования.
+		Задания по программированию: выполняйте задания по программированию, которые помогут вам попрактиковаться в том, что вы узнали на лекциях.
+		Тесты: пройдите тесты, чтобы проверить свое понимание понятий, охватываемых каждым модулем.
+		Финальный проект: примените полученные знания, выполнив финальный проект, демонстрирующий ваши навыки программирования.
+	</p>
+	<h1 class="Dif">Содержание курса</h1>
+	<p class="DifK-K">Вот краткий обзор тем, затронутых в каждом модуле:
+
+		C++: базовый синтаксис, переменные, типы данных, функции, управляющие структуры и массивы.
+		Python: базовый синтаксис, переменные, типы данных, функции, управляющие структуры и файловый ввод/вывод.
+		Java: базовый синтаксис, переменные, типы данных, управляющие структуры, классы, объекты, наследование и полиморфизм.
+		JavaScript: базовый синтаксис, переменные, типы данных, функции, управляющие структуры и веб-разработка с помощью React и Node.js.
+		Kotlin: базовый синтаксис, переменные, типы данных, управляющие структуры, классы, объекты, наследование и функциональное программирование.
+		PHP: базовый синтаксис, переменные, типы данных, функции, управляющие структуры и веб-разработка с WordPress.
+		C#: базовый синтаксис, переменные, типы данных, управляющие структуры, классы, объекты, наследование и платформа .NET.
+		Swift: базовый синтаксис, переменные, типы данных, управляющие структуры, классы, объекты и разработка приложений для iOS.
+		R: Базовый синтаксис, переменные, типы данных, управляющие структуры, анализ данных и визуализация.
+		Ruby: базовый синтаксис, переменные, типы данных, управляющие структуры, классы, объекты и веб-разработка с Ruby on Rails.</p>
+	<h1 class="Dif">Результаты курса</h1>
+	<p class="DifK-K">К концу этого курса вы будете:
+
+		Иметь четкое представление об основах программирования на 10 различных языках программирования.
+		Уметь писать простые и сложные программы на каждом из 10 рассматриваемых языков программирования.
+		Иметь практический опыт работы над заданиями по программированию и окончательным проектом.
+		Будьте хорошо подготовлены к более продвинутым курсам программирования или применяйте программирование для решения проблем в своей области обучения или карьеры.</p>
+
+	</main>
+	
+
+	  
+
+  <table class="schedule">
+  <thead>
+    <tr>
+	  <th>Данные</th>
+      <th>Время</th>
+      <th>Понедельник</th>
+      <th>Вторник</th>
+      <th>Среда</th>
+      <th>Четверг</th>
+      <th>Пятница</th>
+	  <th>Суббота</th>
+	  <th>Воскресенье</th>
+	  <th>Представлен</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+	  <td>04/12/2023</td>
+      <td>9:00am - 10:30am</td>
+      <td>Introduction to Python</td>
+      <td>HTML and CSS Basics</td>
+      <td>Database Design</td>
+      <td>Advanced Java</td>
+      <td>Web Development Fundamentals</td>
+	  <td class="Holiday">Holiday</td>
+	  <td class="Holiday">Holiday</td>
+	  <td>Professor Malcolm, Ph.D. Computer Science.</td>
+    </tr>
+    <tr>
+	  <td>05/01/2023</td>
+      <td>10:30am - 12:00pm</td>
+      <td>Advanced Java</td>
+      <td>Introduction to Python</td>
+      <td>Web Development Fundamentals</td>
+      <td>Database Design</td>
+      <td>HTML and CSS Basics</td>
+	  <td class="Holiday">Holiday</td>
+	  <td class="Holiday">Holiday</td>
+	  <td>Professor Jenkins, a technology expert and PhD in programming.</td>
+    </tr>
+    <tr>
+	  <td>01/01/2023</td>
+      <td>1:00pm - 3:00pm</td>
+      <td>Database Design</td>
+      <td>Web Development Fundamentals</td>
+      <td>Advanced Java</td>
+      <td>HTML and CSS Basics</td>
+      <td>Introduction to Python</td>
+	  <td class="Holiday">Holiday</td>
+	  <td class="Holiday">Holiday</td>
+	  <td>Alexi Marquez, Master of Software Engineering.</td>
+    </tr>
+    <tr>
+	  <td>02/11/2023</td>
+      <td>3:00pm - 5:00pm</td>
+      <td>Web Development Fundamentals</td>
+      <td>Database Design</td>
+      <td>Introduction to Python</td>
+      <td>Advanced Java</td>
+      <td>Database Design</td>
+	  <td class="Holiday">Holiday</td>
+	  <td class="Holiday">Holiday</td>
+	  <td>Professor Jenkins, a technology expert and PhD in programming.</td>
+    </tr>
+	<tr>
+		<td>06/03/2023</td>
+		<td>9:00am - 10:30am</td>
+		<td>Introduction to Python</td>
+		<td>HTML and CSS Basics</td>
+		<td>Database Design</td>
+		<td>Advanced Java</td>
+		<td>Web Development Fundamentals</td>
+		<td class="Holiday">Holiday</td>
+		<td class="Holiday">Holiday</td>
+		<td>Professor Malcolm, Ph.D. Computer Science.</td>
+	  </tr>
+	  <tr>
+		<td>05/15/2023</td>
+		<td>10:30am - 12:00pm</td>
+		<td>Advanced Java</td>
+		<td>Introduction to Python</td>
+		<td>Web Development Fundamentals</td>
+		<td>Database Design</td>
+		<td>HTML and CSS Basics</td>
+		<td class="Holiday">Holiday</td>
+		<td class="Holiday">Holiday</td>
+		<td>Professor Jenkins, a technology expert and PhD in programming.</td>
+	  </tr>
+	  <tr>
+		<td>09/12/2023</td>
+		<td>1:00pm - 3:00pm</td>
+		<td>Database Design</td>
+		<td>Web Development Fundamentals</td>
+		<td>Advanced Java</td>
+		<td>HTML and CSS Basics</td>
+		<td>Introduction to Python</td>
+		<td class="Holiday">Holiday</td>
+		<td class="Holiday">Holiday</td>
+		<td>Alexi Marquez, Master of Software Engineering.</td>
+	  </tr>
+	  <tr>
+		<td>07/8/2023</td>
+		<td>3:00pm - 5:00pm</td>
+		<td>Web Development Fundamentals</td>
+		<td>Database Design</td>
+		<td>Introduction to Python</td>
+		<td>Advanced Java</td>
+		<td>Database Design</td>
+		<td class="Holiday">Holiday</td>
+		<td class="Holiday">Holiday</td>
+		<td>Professor Jenkins, a technology expert and PhD in programming.</td>
+	  </tr>
+  </tbody>
+</table>
+
+
+	  
+
+	<div class="container">
+		<h1>Book a course</h1>
+		<form id="booking-form">
+			<label for="name">Name</label>
+			<input type="text		" name="name" required>
+
+		<label for="email">Email</label>
+		<input type="email" id="email" name="email" required>
+
+		<label for="date">Date</label>
+		<input type="date" id="date" name="date" required>
+
+		<label for="time">Time</label>
+		<input type="time" id="time" name="time" required>
+        
+		<label for="Course">Course</label>
+		<select id="Course" name="Course" required>
+			<option value="">Select a course</option>
+			<option value="Javascript">Javascript</option>
+			<option value="Python">Python</option>
+			<option value="Go">Go</option>
+			<option value="Java">Java</option>
+			<option value="Kotlin">Kotlin</option>
+			<option value="PHP">PHP</option>
+			<option value="C#">C#</option>
+			<option value="Swift">Swift</option>
+			<option value="R">R</option>
+			<option value="Ruby">Ruby</option>
+			<option value="Matlab">Matlab</option>
+			<option value="SQL">SQL</option>
+			<option value="HTML">HTML</option>
+			<option value="CSS">CSS</option>
+		</select>
+		
+		<label for="guests">number of persons with you</label>
+		<select id="guests" name="guests" required>
+			<option value="">Select number of persons</option>
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5+">5 or more</option>
+		</select>
+
+		<label for="comments">Comments</label>
+		<textarea id="comments" name="comments" placeholder="Enter any additional comments or notes"></textarea>
+
+		<input type="submit" value="Book Now">
+	</form>
+
+	<div id="booking-message"></div>
+</div>
+
+<script>
+	const form = document.getElementById("booking-form");
+	const message = document.getElementById("booking-message");
+
+	form.addEventListener("submit", (e) => {
+		e.preventDefault();
+
+		// Get form data
+		const formData = new FormData(form);
+
+		// Send form data to server
+		fetch("https://example.com/book-table", {
+			method: "POST",
+			body: formData
+		})
+		.then(response => response.json())
+		.then(data => {
+			if (data.success) {
+				message.innerHTML = `<p class="success">${data.message}</p>`;
+			} else {
+				message.innerHTML = `<p class="error">${data.message}</p>`;
+			}
+		})
+		.catch(error => {
+			message.innerHTML = `<p class="error">Зарегистрировался, добро пожаловать!!</p>`;
+		});
+	});
+</script>
+
+<footer>
+		<p>&copy; 2023 Наш магазин. Все права защищены.</p>
+	</footer>
+
+
+</body>
+</html>

@@ -1,0 +1,377 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
+
+*{
+  font-family: 'Poppins', sans-serif;
+  margin:0; padding:0;
+  box-sizing: border-box;
+  outline: none; border:none;
+  text-transform: capitalize;
+  transition: all .2s linear;
+}
+
+
+body {
+	font-family: Arial, sans-serif;
+	background-color: #ebc495;
+	margin: 0;
+	padding: 0;
+}
+
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding:25px;
+  min-height: 100vh;
+  background: linear-gradient(90deg, #ebc495 60%, #ebc495 40.1%);
+}
+
+.container form{
+  padding:20px;
+  width:700px;
+  background: #dbb8a0;
+  box-shadow: 0 5px 10px rgba(0,0,0,.1);
+}
+
+.container form .row{
+  display: flex;
+  flex-wrap: wrap;
+  gap:15px;
+}
+
+.container form .row .col{
+  flex:1 1 250px;
+}
+
+.container form .row .col .title{
+  font-size: 20px;
+  color:#333;
+  padding-bottom: 5px;
+  text-transform: uppercase;
+}
+
+.container form .row .col .inputBox{
+  margin:15px 0;
+}
+
+.container form .row .col .inputBox span{
+  margin-bottom: 10px;
+  display: block;
+}
+
+.container form .row .col .inputBox input{
+  width: 100%;
+  border:1px solid #ccc;
+  padding:10px 15px;
+  font-size: 15px;
+  text-transform: none;
+}
+
+.container form .row .col .inputBox input:focus{
+  border:1px solid #000;
+}
+
+.container form .row .col .flex{
+  display: flex;
+  gap:15px;
+}
+
+.container form .row .col .flex .inputBox{
+  margin-top: 5px;
+}
+
+.container form .row .col .inputBox img{
+  height: 34px;
+  margin-top: 5px;
+  filter: drop-shadow(0 0 1px #000);
+}
+
+.container form .submit-btn{
+  width: 100%;
+  padding:12px;
+  font-size: 17px;
+  background:  #000;
+  color:#fff;
+  margin-top: 5px;
+  cursor: pointer;
+}
+
+.container form .submit-btn:hover{
+  background: #cc7d2e;
+}
+
+
+
+
+
+header {
+	background-color: #333;
+	color: #fff;
+	padding: 20px;
+        margin-bottom: 20px;
+}
+
+
+
+nav ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+nav ul li {
+	display: inline-block;
+	margin-right: 20px;
+}
+
+nav ul li:last-child {
+	margin-right: 0;
+}
+
+nav ul li a {
+	color: #fff;
+	text-decoration: none;
+	font-size: 18px;
+}
+
+nav ul li a:hover {
+	color: #ffcc00;
+}
+
+
+
+footer{
+  position: left;
+  bottom: 0;
+
+}
+
+
+
+
+label {
+			display: block;
+			margin-bottom: 10px;
+			font-size: 18px;
+			font-weight: bold;
+			color: #333;
+		}
+		input, select {
+			display: block;
+			width: 100%;
+			padding: 10px;
+			font-size: 16px;
+			border: 1px solid #ddd;
+			border-radius: 5px;
+			background-color: #f9f9f9;
+			color: #333;
+			box-sizing: border-box;
+			margin-bottom: 20px;
+		}
+		input[type="submit"] {
+			background-color: #4CAF50;
+			color: #fff;
+			border: none;
+			cursor: pointer;
+			font-size: 18px;
+			font-weight: bold;
+			padding: 10px 20px;
+			border-radius: 5px;
+			transition: all 0.2s ease-in-out;
+		}
+		input[type="submit"]:hover {
+			background-color: #fff;
+			color: #4CAF50;
+			border: 1px solid #4CAF50;
+		}
+		.success {
+			color: #4CAF50;
+			font-weight: bold;
+			margin-top: 10px;
+		}
+		.error {
+			color: #f44336;
+			font-weight: bold;
+			margin-top: 10px;
+		}
+		/* Changes start here */
+		/* Update colors as per your preference */
+		input:focus, select:focus {
+			outline: none;
+			border-color: #f44336;
+		}
+		input[type="submit"] {
+			background-color: #f44336;
+			color: #fff;
+			border: none;
+			cursor: pointer;
+			font-size: 18px;
+			font-weight: bold;
+			padding: 10px 20px;
+			border-radius: 5px;
+			transition: all 0.2s ease-in-out;
+		}
+		input[type="submit"]:hover {
+			background-color: #4CAF50;
+			color: #fff;
+			border: 1px solid #4CAF50;
+		}
+		label {
+			color: #f44336;
+		}
+    
+</style>
+
+<header>
+	<nav>
+	  <ul>
+		<li><a href="{% url 'webHomeBase' %}">Home</a></li>
+		<li><a href="{% url 'webhome' %}">Buying</a></li>
+		<li><a href="{%url 'webContactBase' %}">Contact Us</a></li>
+		<li><a href="{%url 'webBookingBase' %}">Book a course</a></li>
+		<li><a href="{%url 'webAboutUsBase'%}">About Us</a></li> 
+	  
+					   
+	  </ul>
+	</nav>
+  </header> 
+  
+
+<body>
+  
+
+
+<div class="container">
+
+  <form id="cheak-form">
+
+        <div class="row">
+
+            <div class="col">
+
+                <h3 class="title">billing address</h3>
+
+                <div class="inputBox">
+                    <span>full name :</span>
+                    <input type="text" placeholder="Salah martini" required>
+                </div>
+                <div class="inputBox">
+                    <span>email :</span>
+                    <input type="email" placeholder="example@example.com" required>
+                </div>
+                <div class="inputBox">
+                    <span>address :</span>
+                    <input type="text" placeholder="room - street - locality" required>
+                </div>
+                <div class="inputBox">
+                    <span>city :</span>
+                    <input type="text" placeholder="Egypt" required>
+                </div>
+
+                <div class="flex">
+                    <div class="inputBox">
+                        <span>state :</span>
+                        <input type="text" placeholder="Cairo" required>
+                    </div>
+                    <div class="inputBox">
+                        <span>zip code :</span>
+                        <input type="text" placeholder="123 456" required>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col">
+
+                <h3 class="title">payment</h3>
+
+                <div class="inputBox">
+                    <span>cards accepted :</span>
+                    <img src="{% static 'image/card_img.png' %}"  alt="">
+                </div>
+                <div class="inputBox">
+                    <span>name on card :</span>
+                    <input type="text" placeholder="mr. Salah kole" required>
+                </div>
+                <div class="inputBox">
+                    <span>credit card number :</span>
+                    <input type="number" placeholder="8888-4444-3333-9999" required>
+                </div>
+                <div class="inputBox">
+                    <span>exp month :</span>
+                    <input type="text" placeholder="january" required>
+                </div>
+
+                <div class="flex">
+                    <div class="inputBox">
+                        <span>exp year :</span>
+                        <input type="number" placeholder="2022" required>
+                    </div>
+                    <div class="inputBox">
+                        <span>CVV :</span>
+                        <input type="text" placeholder="1234" required>
+                    </div>
+                </div>
+
+            </div>
+    
+        </div>
+
+        <input type="submit" value="proceed to checkout" class="submit-btn">
+        <div id="cheak-message"></div>
+    </form>
+
+</div>    
+
+<script>
+	const form = document.getElementById("cheak-form");
+	const message = document.getElementById("cheak-message");
+
+	form.addEventListener("submit", (e) => {
+		e.preventDefault();
+
+		// Get form data
+		const formData = new FormData(form);
+
+		// Send form data to server
+		fetch("https://example.com/book-table", {
+			method: "POST",
+			body: formData
+		})
+		.then(response => response.json())
+		.then(data => {
+			if (data.success) {
+				message.innerHTML = `<p class="success">${data.message}</p>`;
+			} else {
+				message.innerHTML = `<p class="error">${data.message}</p>`;
+			}
+		})
+		.catch(error => {
+			message.innerHTML = `<p class="error">Платеж успешно завершен !!</p>`;
+		});
+	});
+</script>
+
+    
+<footer>
+  <p>&copy; 2023 Наш ресторан. Все права защищены.</p>
+</footer>
+
+</body>
+</html>

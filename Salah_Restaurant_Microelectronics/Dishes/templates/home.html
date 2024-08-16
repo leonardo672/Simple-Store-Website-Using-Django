@@ -1,0 +1,65 @@
+
+{% extends 'LastBase.html' %}
+
+
+
+{% block content %}
+<style>
+h1.uppercase {
+  text-transform: uppercase;
+  text-align: center;
+  text-shadow: 0ex;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-size: 4rem;
+}
+
+footer{
+  position: left;
+  bottom: 0;
+
+}
+h1.heading {
+  text-transform: uppercase;
+  text-align: center;
+  text-shadow: 0ex;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-size: 2rem;
+}
+</style>
+
+<h1 class="uppercase">Салах магазин электронных и микроэлектронных устройств</h1>
+
+<!--<ul>
+      {% for coffee in coffee %}
+           <li>{{coffee.name}} (${{coffee.price}})</li>
+      {% endfor %}
+</ul> -->
+
+
+<section class="menu" id="menu">
+  <h1 class="heading">Наш <span>электронных и микроэлектронных устройств</span> </h1>
+<div class="box-container">
+  {% for Dishes in Dishes %}
+  <div class="box">
+     <img src="{{ Dishes.image }}" alt>
+     <h3>{{ Dishes.name }}</h3>
+     <div class="price">${{ Dishes.price }}</div>
+     <a href="{%url 'webAddToCartT' %}" class="btn">Add to cart</a>
+  </div>
+
+{% endfor %} 
+  
+{% endblock %}
+</section>
+
+<footer>
+  <p>&copy; 2023 Наш магазин. Все права защищены.</p>
+</footer>

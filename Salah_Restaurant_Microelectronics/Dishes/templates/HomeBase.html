@@ -1,0 +1,134 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="ru">
+<style>
+
+*{
+    font-family: 'Roboto', sans-serif;
+    margin:0; padding:0;
+    box-sizing: border-box;
+    outline: none; border:none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: .2s linear;
+}
+
+body {
+	font-family: Arial, sans-serif;
+	background-color: #ebc495;
+	margin: 0;
+	padding: 0;
+}
+
+header {
+	background-color: #333;
+	color: #fff;
+	padding: 20px;
+        margin-bottom: 20px;
+}
+
+h1 {
+	margin: 0;
+	font-size: 36px;
+}
+
+nav ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+nav ul li {
+	display: inline-block;
+	margin-right: 20px;
+}
+
+nav ul li:last-child {
+	margin-right: 0;
+}
+
+nav ul li a {
+	color: #fff;
+	text-decoration: none;
+	font-size: 18px;
+}
+
+nav ul li a:hover {
+	color: #ffcc00;
+}
+
+main {
+	max-width: 1000px;
+	margin: 0 auto;
+	padding: 20px;
+}
+
+#about {
+	margin-top: 50px;
+}
+
+h2 {
+	font-size: 28px;
+	margin-bottom: 20px;
+        text-align: center;
+}
+
+p {
+	font-size: 18px;
+	line-height: 1.5;
+	margin-bottom: 20px;
+}
+
+h3{
+
+        font-size: 20px;
+	margin-bottom: 20px;
+        text-align: center;
+}
+img{
+
+  width: 100%;
+  height: 75%;
+
+} 
+footer{
+  position: left;
+  bottom: 0;
+
+}
+   
+</style>
+
+<header>
+	<nav>
+	  <ul>
+		<li><a href="{% url 'webHomeBase' %}">Home</a></li>
+		<li><a href="{% url 'webhome' %}">Buying</a></li>
+		<li><a href="{%url 'webContactBase' %}">Contact Us</a></li>
+		<li><a href="{%url 'webBookingBase' %}">Book a course</a></li>
+		<li><a href="{%url 'webAboutUsBase'%}">About Us</a></li> 
+	   
+					   
+	  </ul>
+	</nav>
+  </header> 
+ 
+<h2> Добро Пожаловать В микроэлектроника Салах магазин</h2>
+<h3> Каир-Египет </h2> 
+
+<main>
+		<p>Мы рады видеть вас здесь! Наш список предлагает множество электронных и мехатронных устройств различных типов, качества и стилей.</p>
+		<img src="{% static 'Dishes/images/1.jpg' %}" alt="Restaurant Image">
+		<p>Если у вас есть какие-либо конкретные спецификации, характеристики или пожелания к машине или детали, которую вы хотите приобрести, сообщите нам об этом, и мы сделаем все возможное, чтобы предоставить их. Наши сотрудники дружелюбны и хорошо осведомлены и всегда рады ответить на любые вопросы или проблемы, которые могут у вас возникнуть.</p>
+		<p>Спасибо, что выбрали наш магазин. Мы надеемся, что у вас есть большой опыт!</p>
+	</main>
+	<footer>
+		<p>&copy; 2023 Наш магазин. Все права защищены.</p>
+	</footer>
+</body>
+
+</html>
+
+
