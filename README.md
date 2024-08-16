@@ -44,9 +44,9 @@ Note: This document outlines the preliminary design for a virtual information sy
 
 ![image](https://github.com/user-attachments/assets/cd34e0c5-0eb4-4033-98fb-8649463a0251)
 
-![image](https://github.com/user-attachments/assets/1e6cccb5-5d9c-4fb0-9d3d-f596904cc2c3)
-
 ## About Us Page (Страница О Нас):
+
+![image](https://github.com/user-attachments/assets/1e6cccb5-5d9c-4fb0-9d3d-f596904cc2c3)
 
 ![image](https://github.com/user-attachments/assets/faeafb68-ab0a-479d-aa98-7811a52fef92)
 
